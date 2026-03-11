@@ -26,7 +26,14 @@ import {
   Scale,
   ArrowRightLeft,
   Activity,
-  Key
+  Key,
+  Moon,
+  Menu,
+  Shield,
+  Tag,
+  Info,
+  HelpCircle,
+  Globe
 } from "lucide-react";
 
 // Types
@@ -97,6 +104,7 @@ const calculators: CalculatorInfo[] = [
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState("todas");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const filteredCalculators =
     activeCategory === "todas"
@@ -135,11 +143,42 @@ export default function Home() {
             </nav>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 relative">
+            <button className="text-[#6B6B6B] hover:text-primary transition-colors p-2 rounded-full hover:bg-[#ECECEC]">
+              <Moon className="w-5 h-5" />
+            </button>
             <a href="#" className="hidden sm:block font-medium hover:text-primary transition-colors">Login</a>
             <a href="#" className="bg-primary hover:bg-primary-hover text-surface px-5 py-2 rounded-lg font-medium transition-colors">
               Sign up
             </a>
+            <div className="relative">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-[#1A1A1A] hover:opacity-80 transition-opacity p-2 ml-2"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+              {isMenuOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-surface border border-[#D9D9D9] shadow-lg rounded-xl overflow-hidden py-1 z-50">
+                  <a href="#" className="flex items-center gap-3 px-4 py-3 text-sm text-[#1A1A1A] hover:bg-[#F5F5F5] transition-colors">
+                    <Shield className="w-4 h-4 text-[#6B6B6B]" /> Seguridad
+                  </a>
+                  <a href="#" className="flex items-center gap-3 px-4 py-3 text-sm text-[#1A1A1A] hover:bg-[#F5F5F5] transition-colors">
+                    <Tag className="w-4 h-4 text-[#6B6B6B]" /> Pricing
+                  </a>
+                  <a href="#" className="flex items-center gap-3 px-4 py-3 text-sm text-[#1A1A1A] hover:bg-[#F5F5F5] transition-colors">
+                    <Info className="w-4 h-4 text-[#6B6B6B]" /> Sobre nosotros
+                  </a>
+                  <a href="#" className="flex items-center gap-3 px-4 py-3 text-sm text-[#1A1A1A] hover:bg-[#F5F5F5] transition-colors">
+                    <HelpCircle className="w-4 h-4 text-[#6B6B6B]" /> Ayuda
+                  </a>
+                  <div className="border-t border-[#E5E7EB] my-1"></div>
+                  <a href="#" className="flex items-center gap-3 px-4 py-3 text-sm text-[#1A1A1A] hover:bg-[#F5F5F5] transition-colors">
+                    <Globe className="w-4 h-4 text-[#6B6B6B]" /> Lenguaje
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </header>
@@ -220,14 +259,14 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="w-full bg-background-app border-t border-[#D9D9D9] mt-auto py-10 z-10">
-        <div className="max-w-[1400px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-[#6B6B6B] text-sm font-medium text-center md:text-left max-w-2xl">
+      {/* Footer V1 Structure with new text */}
+      <footer className="w-full bg-surface border-t border-border-subtle mt-auto py-8 z-10">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-text-secondary text-sm font-medium text-center md:text-left">
             Esta plataforma fue diseñada y desarrollada por Sebastian Cantor.<br />
             Hecho en Colombia 🇨🇴 para ayudar a los Colombianos a calcular de forma simple y clara sus finanzas, impuestos y decisiones importantes.
-          </div>
-          <div className="flex gap-8 text-sm text-[#6B6B6B] mt-4 md:mt-0">
+          </p>
+          <div className="flex gap-6 text-sm text-text-secondary">
             <a href="#" className="hover:text-primary transition-colors">Términos de uso</a>
             <a href="#" className="hover:text-primary transition-colors">Privacidad</a>
             <a href="#" className="hover:text-primary transition-colors">Contacto</a>
