@@ -221,21 +221,12 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full bg-background-app border-t border-[#D9D9D9] mt-auto py-10 z-10">
-        <div className="max-w-[1400px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col text-[#6B6B6B] text-sm font-medium text-center md:text-left">
-            <p>
-              Esta plataforma fue diseñada y desarrollada por Sebastian Cantor.
-            </p>
-            <p>
-              Hecho en Colombia 🇨🇴 para ayudar a los Colombianos a calcular de forma simple y clara sus finanzas, impuestos y decisiones importantes.
-            </p>
-          </div>
-          <div className="flex gap-8 text-sm text-[#6B6B6B]">
-            <a href="#" className="hover:text-primary transition-colors">Términos de uso</a>
-            <a href="#" className="hover:text-primary transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-primary transition-colors">Contacto</a>
-          </div>
+      <footer className="relative z-10 w-full bg-background-app border-t border-[#D9D9D9] mt-auto py-16">
+        <div className="max-w-[1400px] mx-auto px-8 flex flex-col items-center justify-center text-center gap-4">
+          <p className="text-[#1A1A1A] text-base font-medium max-w-2xl">
+            Esta plataforma fue diseñada y desarrollada por Sebastian Cantor.<br />
+            Hecho en Colombia 🇨🇴 para ayudar a los Colombianos a calcular de forma simple y clara sus finanzas, impuestos y decisiones importantes.
+          </p>
         </div>
       </footer>
     </div>
