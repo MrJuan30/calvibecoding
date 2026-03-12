@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));  /* Tailwind v4 class-based dark mode override */
+
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --color-primary: #FF4D3A;
@@ -20,14 +22,7 @@
   --foreground: #1A1A1A;
 }
 
-@media (prefers-color-scheme: dark) {
 
-  /* Forcing light mode for this project as requested */
-  :root {
-    --background: #FAFAFA;
-    --foreground: #1A1A1A;
-  }
-}
 
 @keyframes colombiaColors {
 
