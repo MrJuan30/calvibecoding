@@ -3,6 +3,7 @@
 import { Calculator, Grip, Shield, Tag, Info, HelpCircle, Globe, Moon, Sun } from "lucide-react";
 import { useTheme } from "../theme-provider";
 import Link from "next/link";
+import LiquidacionLaboralForm from "../../components/LiquidacionLaboralForm";
 
 export default function LiquidacionLaboral() {
   const { theme, toggleTheme } = useTheme();
@@ -69,13 +70,9 @@ export default function LiquidacionLaboral() {
           </p>
         </div>
 
-        {/* Calculator Interface Container Placeholder */}
-        <div className="bg-surface dark:bg-gray-800 border border-[#D4D4D4] dark:border-gray-700 rounded-2xl p-6 md:p-10 shadow-sm min-h-[500px] flex items-center justify-center">
-          <div className="text-center text-[#6B6B6B] dark:text-gray-400">
-            <Calculator className="w-16 h-16 mx-auto mb-4 opacity-50" />
-            <h2 className="text-xl font-semibold text-[#1A1A1A] dark:text-gray-200">Área de Calculadora</h2>
-            <p>Aquí construiremos la interfaz de liquidación</p>
-          </div>
+        {/* Calculator Interface Container */}
+        <div className="bg-surface dark:bg-gray-800 border border-[#D4D4D4] dark:border-gray-700 rounded-2xl p-6 md:p-10 shadow-sm min-h-[500px] flex items-start justify-center">
+          <LiquidacionLaboralForm />
         </div>
       </main>
 
